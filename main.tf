@@ -33,7 +33,7 @@ module "mysql" {
  vpc_id        = module.vpc_id
 }
 
-module "mysql" {
+module "vpc" {
  source                     = "./modules/app"
  env                        = var.env
  vpc_cidr_block             = var.vpc_cidr_block
