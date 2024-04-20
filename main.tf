@@ -35,4 +35,8 @@ module "mysql" {
  default_vpc_id    = var.default_vpc_id
 default_vpc_cidr   = var.default_vpc_cidr
 default_route_table_id = var.default_route_table_id
+variable frontend_subnets = var.frontend_subnets
+variable backend_subnets = var.backend_subnets
+variable db_subnets = var.db_subnets
+variable availability_zones = var.availability_zones
 }
