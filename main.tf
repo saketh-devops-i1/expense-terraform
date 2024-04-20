@@ -26,3 +26,10 @@ module "mysql" {
  zone_id       = var.zone_id
  vault_token   = var.vault_token
 }
+
+module "mysql" {
+ source        = "./modules/app"
+ env           = var.env
+ vpc_cidr_block = var.vpc_cidr_block
+ subnet_cidr_block = var.subnet_cidr_block
+}
