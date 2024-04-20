@@ -44,5 +44,6 @@ default_route_table_id      = var.default_route_table_id
 variable frontend_subnets   = var.frontend_subnets
 variable backend_subnets    = var.backend_subnets
 variable db_subnets         = var.db_subnets
+variable public_subnets     = var.public_subnets
 variable availability_zones = var.availability_zones
 }
