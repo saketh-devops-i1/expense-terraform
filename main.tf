@@ -7,7 +7,7 @@ module "frontend" {
  zone_id       = var.zone_id
  vault_token   = var.vault_token
  subnets       = module.vpc.frontend_subnets
- vpc_id        = module.vpc_id
+ vpc_id        = module.vpc.vpc_id
 }
 
 module "backend" {
@@ -19,7 +19,7 @@ module "backend" {
  zone_id       = var.zone_id
  vault_token   = var.vault_token
  subnets       = module.vpc.backend_subnets
- vpc_id        = module.vpc_id
+ vpc_id        = module.vpc.vpc_id
 }
 
 module "mysql" {
@@ -30,7 +30,7 @@ module "mysql" {
  zone_id       = var.zone_id
  vault_token   = var.vault_token
  subnets       = module.vpc.db_subnets
- vpc_id        = module.vpc_id
+ vpc_id        = module.vpc.vpc_id
 }
 
 module "vpc" {
