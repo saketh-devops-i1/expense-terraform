@@ -50,7 +50,7 @@ resource "null_resource" "ansible" {
         type = "ssh"
         user = jsondecode(data.vault_generic_secret.ssh.data_json).ansible_user
         password = jsondecode(data.vault_generic_secret.ssh.data_json).ansible_password
-        host = aws_instance.instance.public_ip
+        host = aws_instance.instance.private_ip
       }
           inline = [
       "sudo pip3.11 install ansible hvac",
