@@ -61,7 +61,7 @@ resource "aws_subnet" "db" {
 
 
   tags = {
-    Name = "${var.env}-fdb-subnet-${count.index+1}"
+    Name = "${var.env}-db-subnet-${count.index+1}"
   }
 }
 
