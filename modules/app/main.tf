@@ -58,7 +58,13 @@ resource "null_resource" "ansible" {
       "ansible-pull -i localhost, -U https://github.com/saketh-devops-i1/learn-ansible.git expense.yml -e env=${var.env} -e role_name=${var.component} -e @~/secrets.json -e @~/app.json",
           ]
      }
-    }
+    
+    provisioner "remote-exec" {
+    inline = [
+      "rm -f ~/secrets.json ~/app.json"
+          ]
+     }
+}
 
 resource "aws_route53_record" "record" {
   name = "${var.component}-${var.env}"
