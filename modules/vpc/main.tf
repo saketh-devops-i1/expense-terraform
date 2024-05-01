@@ -156,7 +156,7 @@ resource "aws_route_table" "backend" {
 
 }
 
-resource "aws_route_table_association" "backendtend" {
+resource "aws_route_table_association" "backend" {
   count          = length(var.backend_subnets)
   subnet_id      = aws_subnet.backend[count.index].id
   route_table_id = aws_route_table.backend[count.index].id
