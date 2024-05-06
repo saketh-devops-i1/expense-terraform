@@ -8,6 +8,9 @@ module "frontend" {
  vault_token   = var.vault_token
  subnets       = module.vpc.frontend_subnets
  vpc_id        = module.vpc.vpc_id
+ lb_type       = "public"
+ lb_needed     = true
+ lb_subnets    = module.vpc.public_subnets
 }
 
 module "backend" {
@@ -20,6 +23,9 @@ module "backend" {
  vault_token   = var.vault_token
  subnets       = module.vpc.backend_subnets
  vpc_id        = module.vpc.vpc_id
+ lb_type       = "private"
+ lb_needed     = true
+ lb_subnets    = module.vpc.backend_subnets
 }
 
 module "mysql" {
@@ -31,6 +37,7 @@ module "mysql" {
  vault_token   = var.vault_token
  subnets       = module.vpc.db_subnets
  vpc_id        = module.vpc.vpc_id
+ lb_needed     = false
 }
 
 module "vpc" {
