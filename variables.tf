@@ -23,3 +23,5 @@ variable "lb_subnets" {
 variable "app_port" {
     default = null
 }
+variable "bastion_nodes" {}
+variable "prometheus_nodes" {}
