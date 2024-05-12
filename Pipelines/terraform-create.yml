@@ -9,7 +9,7 @@ pipelines:
         auto_update: true
         branch: main
     secure_variables:
-      TF_VAR_vault_token: AES:8t6gQpCb1INSyfBWse0Xow==:meILoOvFCe/tmfiZoFliiIZ3TAqoeL+lmUj7y1aLBPQ=
+      TF_VAR_vault_token: AES:kaUXh+aq4HbGIWkVbqfqvA==:hsfXYjAh0KZQnLcgEt3F7+LWVkx0Ex/pxx2AgBw4SLc=
       
     stages:
     - DEV:
